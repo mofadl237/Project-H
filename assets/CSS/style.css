@@ -1,0 +1,280 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+:root {
+    --main-color: #7AA93C;
+    --second-color: #FF792D;
+    --section-padding: 100px;
+}
+
+/*Global Style*/
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+/*Utility Class*/
+.container {
+    width: 95%;
+    margin-inline: auto;
+    padding: 1rem;
+}
+
+.center-F {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.d-flex {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.align-items-start {
+    align-items: flex-start;
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.position-Relative {
+    position: relative;
+}
+
+.position-Fixed {
+    position: fixed;
+}
+
+.Top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.bg-dark {
+    background-color: #222;
+}
+
+.bg-main {
+    background-color: var(--main-color);
+}
+
+.bg-second {
+    background-color: var(--second-color);
+}
+
+.text-white {
+    color: #fff;
+}
+
+.text-main {
+    color: var(--main-color);
+}
+
+.text-second {
+    color: var(--second-color);
+}
+
+.btn {
+    padding: .6rem 1rem;
+    border: none;
+    border-radius: .4rem;
+    -webkit-border-radius: .4rem;
+    -moz-border-radius: .4rem;
+    -ms-border-radius: .4rem;
+    -o-border-radius: .4rem;
+}
+
+.p-1 {
+    padding: 1rem;
+}
+
+.py-1 {
+    padding-block: 1rem;
+}
+
+.px-1 {
+    padding-inline: 1rem;
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+.py-2 {
+    padding-block: 2rem;
+}
+
+.px-2 {
+    padding-inline: 2rem;
+}
+
+.m-1 {
+    margin: 1rem;
+}
+
+.my-1 {
+    margin-block: 1rem;
+}
+
+.mx-1 {
+    margin-inline: 1rem;
+}
+
+.circle-5 {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.circle-5>a i {
+    line-height: 50px;
+}
+
+/*/Fixed Top*/
+.Fixed {
+    & a {
+        flex-basis: 150px;
+    }
+}
+
+/* main Section */
+main {
+    width: 100%;
+    height: 100vh;
+    top: 4.1rem;
+    background-image: url(../Images/rev_home1_1.jpg);
+    background-position: center center;
+    background-size: cover;
+    animation: BackgroundImage 3s infinite;
+    -webkit-animation: BackgroundImage 3s infinite;
+
+    & .logo {
+        flex-basis: 70%;
+    }
+
+    & li a {
+        font-size: 1.2rem;
+    }
+
+    .responsive {
+        display: none;
+    }
+    .responsive i {
+        font-size: 2rem;
+    }
+    /*هنا في الجافاسكريبت هنشيل دا ونمسك العنصر ونضيف events click علي responsive ندي لل ul.d-flex property*/
+    .responsive:active +ul.d-flex{
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+}
+}
+
+/* media Query */
+
+@media(max-width : 1200px) {}
+
+@media(max-width : 992px) {
+    main ul.d-flex {
+        transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        -o-transform: translateX(100%);
+        flex-direction: column;
+        position: fixed;
+        top: 4.1rem;
+        right: 0%;
+        max-width: 400px;
+        min-width: 200px;
+        background-color: #7AA93C;
+        padding-block: 1rem;
+        
+        & li{
+            padding-bottom: 1rem;
+            width:100%;
+            padding-left: 1rem;
+            & a{
+                
+                text-align: left;
+            }
+        }
+        & li:nth-child(7){
+            display: none;
+        }
+        
+    }
+    main {
+        & .responsive{
+            display:block;
+        }
+    }
+}
+
+@media(max-width : 768px) {}
+
+@media(max-width : 576px) {
+    .container {
+        width: 100%;
+    }
+}
+
+/*Animation */
+@keyframes BackgroundImage {
+    0% {
+        background-image: url(../Images/rev_home1_1.jpg);
+    }
+
+    33% {
+        background-image: url(../Images/rev_home1_2.jpg);
+    }
+
+    67% {
+        background-image: url(../Images/rev_home1_3.jpg);
+    }
+
+    100% {
+        background-image: url(../Images/rev_home1_1.jpg);
+    }
+}
