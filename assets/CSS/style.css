@@ -76,6 +76,7 @@ ul {
     z-index: 9999;
 }
 
+
 .overlay {
     position: absolute;
     top: 0;
@@ -99,6 +100,10 @@ ul {
 
 .text-white {
     color: #fff;
+}
+
+.w-100 {
+    width: 100%;
 }
 
 .text-main {
@@ -154,7 +159,9 @@ ul {
 .mx-1 {
     margin-inline: 1rem;
 }
-
+.fs-5{
+    font-size: 5rem;
+}
 .circle-5 {
     height: 50px;
     width: 50px;
@@ -180,7 +187,7 @@ ul {
 main {
     width: 100%;
     height: 100vh;
-    top: 4.1rem;
+    top: 4rem;
     background-image: url(../Images/rev_home1_1.jpg);
     background-position: center center;
     background-size: cover;
@@ -198,24 +205,50 @@ main {
     .responsive {
         display: none;
     }
+
     .responsive i {
         font-size: 2rem;
     }
+
     /*هنا في الجافاسكريبت هنشيل دا ونمسك العنصر ونضيف events click علي responsive ندي لل ul.d-flex property*/
-    .responsive:active +ul.d-flex{
+    .responsive:active+ul.d-flex {
         transform: translateX(0);
         -webkit-transform: translateX(0);
         -moz-transform: translateX(0);
         -ms-transform: translateX(0);
         -o-transform: translateX(0);
+    }
+
+    .textTitle {
+        position: absolute;
+    bottom: 10px;
+    z-index: 9999;
+    }
+    .animationTet::after{
+        position: absolute;
+        width:fit-content;
+        height:100%;
+        content:" ";
+        top:0;
+        left:.8rem;
+        animation:textAnimation infinite 5s;
+        -webkit-animation:textAnimation infinite 5s;
 }
 }
+
 
 /* media Query */
 
-@media(max-width : 1200px) {}
+@media(max-width : 1200px) {
+    .fs-5{
+        font-size: 4rem;
+    }
+}
 
 @media(max-width : 992px) {
+    .fs-5{
+        font-size: 3rem;
+    }
     main ul.d-flex {
         transform: translateX(100%);
         -webkit-transform: translateX(100%);
@@ -230,36 +263,50 @@ main {
         min-width: 200px;
         background-color: #7AA93C;
         padding-block: 1rem;
-        
-        & li{
+
+        & li {
             padding-bottom: 1rem;
-            width:100%;
+            width: 100%;
             padding-left: 1rem;
-            & a{
-                
+
+            & a {
+
                 text-align: left;
             }
         }
-        & li:nth-child(7){
+
+        & li:nth-child(7) {
             display: none;
         }
-        
+
     }
+
     main {
-        & .responsive{
-            display:block;
+        & .responsive {
+            display: block;
         }
     }
 }
 
-@media(max-width : 768px) {}
+@media(max-width : 768px) {
+    .fs-5{
+        font-size: 2.5rem;
+    }
+}
 
 @media(max-width : 576px) {
+    .fs-5{
+        font-size: 1.8rem;
+    }
     .container {
         width: 100%;
     }
 }
-
+@media (max-width:400px){
+    .fs-5{
+        font-size: 1.2rem;
+    }
+}
 /*Animation */
 @keyframes BackgroundImage {
     0% {
@@ -277,4 +324,56 @@ main {
     100% {
         background-image: url(../Images/rev_home1_1.jpg);
     }
+}
+/*change Content*/
+@keyframes textAnimation {
+    0%{
+        transform:translateY(-50%);
+        content:" SERVICES"    ;
+        -webkit-transform:translateY(-50%);
+        -moz-transform:translateY(-50%);
+        -ms-transform:translateY(-50%);
+        -o-transform:translateY(-50%);
+}
+    30%{
+        content:" SERVICES"    ;
+        transform:translateY(0%);
+        -webkit-transform:translateY(0%);
+        -moz-transform:translateY(0%);
+        -ms-transform:translateY(0%);
+        -o-transform:translateY(0%);
+}
+    31%{
+        content:" REPUTATION"    ;
+        transform:translateY(-50%);
+        -webkit-transform:translateY(-50%);
+        -moz-transform:translateY(-50%);
+        -ms-transform:translateY(-50%);
+        -o-transform:translateY(-50%);
+}
+    61%{
+        transform:translateY(0%);
+        content:" REPUTATION"    ;
+        -webkit-transform:translateY(0%);
+        -moz-transform:translateY(0%);
+        -ms-transform:translateY(0%);
+        -o-transform:translateY(0%);
+}
+    62%{
+        transform:translateY(-50%);
+        content:" EXERCISE"    ;
+        -webkit-transform:translateY(-50%);
+        -moz-transform:translateY(-50%);
+        -ms-transform:translateY(-50%);
+        -o-transform:translateY(-50%);
+}
+    100%{
+        transform:translateY(0%);
+        content:" EXERCISE";
+        -webkit-transform:translateY(0%);
+        -moz-transform:translateY(0%);
+        -ms-transform:translateY(0%);
+        -o-transform:translateY(0%);
+}
+    
 }
